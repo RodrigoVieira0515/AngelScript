@@ -17,6 +17,8 @@ project "AngelScript"
             "include/*.cpp",
             "source/*.h",
             "source/*.cpp",
+            "addon/**.cpp",
+            "addon/**.h",
         }
 
         defines {
