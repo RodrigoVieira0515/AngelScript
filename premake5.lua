@@ -17,8 +17,8 @@ project "AngelScript"
             "include/*.cpp",
             "source/*.h",
             "source/*.cpp",
-            "addon/**.cpp",
-            "addon/**.h",
+            "add_on/**.cpp",
+            "add_on/**.h",
         }
 
         defines {
@@ -35,3 +35,11 @@ project "AngelScript"
                 postbuildcommands {
                     'lib $(TargetPath) $(IntDirFullPath)as_callfunc_x64_msvc_asm.obj /OUT:$(TargetPath)'
                 }
+        filter "configurations:Debug"
+            runtime "Debug"
+            symbols "on"
+    
+    filter "configurations:Release"
+            runtime "Release"
+            symbols "off"
+            optimize "on"
